@@ -73,6 +73,22 @@ public class LL {
         size -= 1;
     }
 
+    public void delete(int index){
+        if(index == 0){
+            deleteFromFirst();
+            return;
+        }
+
+        if(index == size - 1){
+            deleteFromLast();
+            return;
+        }
+
+        ListNode prev = fetchNode(index - 1);
+        prev.next = prev.next.next;
+        size -= 1;
+    }
+
     public void display(){
         ListNode temp = head;
         while(temp != null){
